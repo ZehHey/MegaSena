@@ -18,16 +18,17 @@
     </form>
     </br>
 
-    <div>
-        {% if todos %}
-            <ul>
-                {% for key, value in todos %}
-                    <li>{{key}} {{value}}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
-
+    <script>
+        <div>
+            {% if todos %}
+                <ul>
+                    {% for key, value in todos %}
+                        <li>{{key}} {{value}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </script>
 
 </body>
 </html>
