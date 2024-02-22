@@ -3,6 +3,8 @@ from random import randint
 
 app = Flask(__name__)
 todos = {}
+
+
 @app.route('/')
 def homepage():
     return render_template('homepage.html')
@@ -17,8 +19,9 @@ def sortear(numero):
             if n not in lista:
                 lista.append(n)
                 lista.sort()
-        todos[f'Jogo {c+1}: '] = lista[:]
+        todos[f'Jogo {c + 1}: '] = lista[:]
         lista.clear()
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
