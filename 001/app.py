@@ -1,18 +1,14 @@
 from flask import Flask, render_template, request
 from random import randint
-#from jinja2 import Environment, PackageLoader, select_autoescape
+
 
 app = Flask(__name__)
 todos = {}
-#env = Environment(
-    #loader=PackageLoader('app.py')
-    #autoescape=select_autoescape
-#)
-#template = env.get_template('homepage.html')
+
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html')
+    return render_template('index.html')
 
 
 def sortear(numero):
@@ -33,8 +29,8 @@ def index():
     if request.method == 'POST':
         numero = int(request.form['numero'])
         sortear(numero)
-        return render_template('homepage.html', todos=todos.items())
-    return render_template('homepage.html', todos=[])
+        return render_template('index.html', todos=todos.items())
+    return render_template('index.html', todos=[])
 
 
 if __name__ == "__main__":
