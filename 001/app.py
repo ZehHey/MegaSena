@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request
 from random import randint
-from jinja2 import Environment, PackageLoader, select_autoescape
+#from jinja2 import Environment, PackageLoader, select_autoescape
 
 app = Flask(__name__)
 todos = {}
-env = Environment(
-    loader=PackageLoader('app.py')
-    autoescape=select_autoescape
-)
-template = env.get_template('homepage.html')
+#env = Environment(
+    #loader=PackageLoader('app.py')
+    #autoescape=select_autoescape
+#)
+#template = env.get_template('homepage.html')
 
 @app.route('/')
 def homepage():
